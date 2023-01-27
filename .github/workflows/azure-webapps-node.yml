@@ -18,10 +18,10 @@ jobs:
       - name: Run Solidity instance localy
         working-directory: ./solidity
         run: |
-          npm install -g npx
-          npm install
           npm -v
           npx -v
+          npm install -g npx
+          npm install
           npx cache clean
           npx hardhat compile --force --quiet
           npx hardhat run scripts/deploy.ts --network localhost 

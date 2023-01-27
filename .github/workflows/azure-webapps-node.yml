@@ -14,18 +14,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-        
-    - name: Run Solidity instance localy
-      working-directory: ./solidity
-      run: |
-        npm install -g npx
-        npm install
-        npx cache clean
-        npx hardhat compile --force --quiet
-        npx hardhat run scripts/deploy.ts --network localhost 
-        NFT_ADDRESS=$(jq '.nftAddress' deploy.json)
-        VAULT_ADDRESS=$(jq '.vaultAddress' deploy.json)
-        echo "ntf_address=${NFT_ADDRESS}" >> $GITHUB_ENV
-        echo "vault_address=${VAULT_ADDRESS}" >> $GITHUB_ENV
-       shell: sh
+      - uses: actions/checkout@v3
+      - name: Run Solidity instance localy
+        working-directory: ./solidity
+        run: |
+          npm install -g npx
+          npm install
+          npx cache clean
+          npx hardhat compile --force --quiet
+          npx hardhat run scripts/deploy.ts --network localhost 
+          NFT_ADDRESS=$(jq '.nftAddress' deploy.json)
+          VAULT_ADDRESS=$(jq '.vaultAddress' deploy.json)
+          echo "ntf_address=${NFT_ADDRESS}" >> $GITHUB_ENV
+          echo "vault_address=${VAULT_ADDRESS}" >> $GITHUB_ENV
+        shell: sh

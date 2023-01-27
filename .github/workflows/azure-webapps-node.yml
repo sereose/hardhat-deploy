@@ -23,4 +23,5 @@ jobs:
           npm install package.json
           npm cache clean --force 
           npx hardhat compile --force
+          npx hardhat run scripts/deploy.ts --network localhost
         shell: sh

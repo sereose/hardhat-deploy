@@ -22,10 +22,5 @@ jobs:
           npx -v
           npm install package.json
           npm audit fix --force
-          npx hardhat compile --force
-          npx hardhat run scripts/deploy.ts --network localhost 
-          NFT_ADDRESS=$(jq '.nftAddress' deploy.json)
-          VAULT_ADDRESS=$(jq '.vaultAddress' deploy.json)
-          echo "ntf_address=${NFT_ADDRESS}" >> $GITHUB_ENV
-          echo "vault_address=${VAULT_ADDRESS}" >> $GITHUB_ENV
+          npx cache clean
         shell: sh

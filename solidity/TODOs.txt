@@ -1,0 +1,19 @@
+
+1. Send eth to the contract on private chain because they will be doing the unlock transaction ...
+2. Send eth to the contract on public chain because they will be doing stuff
+3. some prechecks before continuing the transaction like balance etc
+4. increase block range so even if we restart, the block can be synced quickly .... think this thru once more,
+    since we have only two contracts, we dont need to do much, we can start the listeners and it keeps syncing
+
+
+
+TASKS
+
+make any final contract changes
+deploy a final contract on testnet
+block height update should be done whenever started and increase the range
+update the constants
+make a common address for forte and use it everywhere
+make sure that we get an NFT entry while bridgin in
+transfer some eth to the common address on public testnet
+make sure to write the script to transfer eth

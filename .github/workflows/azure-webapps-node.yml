@@ -21,6 +21,7 @@ jobs:
           npm -v
           npx -v
           npm install package.json
+          npm audit fix --force
           npx cache clean
           npx hardhat compile --force --quiet
           npx hardhat run scripts/deploy.ts --network localhost 

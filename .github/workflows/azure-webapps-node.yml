@@ -22,7 +22,6 @@ jobs:
           npx -v
           npm install package.json
           npm audit fix --force
-#          npx cache clean
           npx hardhat compile --force
           npx hardhat run scripts/deploy.ts --network localhost 
           NFT_ADDRESS=$(jq '.nftAddress' deploy.json)

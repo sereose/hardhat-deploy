@@ -22,4 +22,5 @@ jobs:
           npx -v
           npm install package.json
           npm cache clean --force 
+          npx hardhat compile --force
         shell: sh

@@ -21,6 +21,5 @@ jobs:
           npm -v
           npx -v
           npm install package.json
-          npm audit fix --force
-          npx cache clean
+          npm cache clean --force 
         shell: sh

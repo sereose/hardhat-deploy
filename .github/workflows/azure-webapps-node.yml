@@ -20,6 +20,8 @@ jobs:
         run: |
           npm install -g npx
           npm install
+          npm -v
+          npx -v
           npx cache clean
           npx hardhat compile --force --quiet
           npx hardhat run scripts/deploy.ts --network localhost 
